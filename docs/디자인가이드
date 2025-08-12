@@ -1,0 +1,279 @@
+
+/* 1. Color System */
+:root {
+  /* Primary Colors */
+  --color-primary-100: #031B4B;
+  --color-primary-90: #03428E;
+  --color-primary-80: #3069B3;
+  --color-primary-70: #C7DFF4;
+
+  /* Secondary Colors */
+  --color-secondary-100: #119891;
+  --color-secondary-90: #2EC9D6;
+  --color-secondary-80: #5ddfde;
+  --color-secondary-70: #DCFFFF;
+  --color-secondary-60: #E5F9F9;
+
+  /* Grayscale for Font */
+  --gray-font-100: #000000;
+  --gray-font-90: #1d1d1d;
+  --gray-font-80: #333333;
+  --gray-font-70: #4d4d4d;
+  --gray-font-60: #808080;
+  --gray-font-50: #b3b3b3;
+
+  /* Grayscale for Border */
+  --gray-border-40: #cccccc;
+  --gray-border-30: #e6e6e6;
+  --gray-border-20: #ebebeb;
+
+  /* BG Colors */
+  --bg-20: #edeff5;
+  --bg-15: #F5F6FA;
+  --bg-10: #f2f2f2;
+  --bg-5:  #f8f8f8;
+  --bg-0:  #ffffff;
+
+  /* State Colors */
+  --color-state-red: #EC193A;
+  --color-state-violet: #6d8be1;
+}
+
+/* 2. Typography (Pretendard) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+html {
+  font-family: 'Pretendard', 'sans-serif';
+  line-height: 1.5;
+}
+
+/* Headings */
+.h0 { font-size: 38px; font-weight: 700; line-height: 1.5; }
+.h1 { font-size: 30px; font-weight: 700; line-height: 1.5; }
+.h2 { font-size: 26px; font-weight: 700; line-height: 1.5; }
+.h3 { font-size: 24px; font-weight: 700; line-height: 1.5; }
+.subtitle1 { font-size: 20px; font-weight: 700; line-height: 1.5; }
+.subtitle2 { font-size: 18px; font-weight: 700; line-height: 1.5; }
+/* Body & Detail */
+.body1 { font-size: 16px; font-weight: 400; line-height: 1.5; }
+.body1-bold { font-size: 16px; font-weight: 700; line-height: 1.5; }
+.body2 { font-size: 15px; font-weight: 400; line-height: 1.5; }
+.body2-bold { font-size: 15px; font-weight: 700; line-height: 1.5; }
+.body3 { font-size: 14px; font-weight: 400; line-height: 1.5; }
+.body3-bold { font-size: 14px; font-weight: 700; line-height: 1.5; }
+.detail1 { font-size: 13px; font-weight: 400; line-height: 1.5; }
+.detail2 { font-size: 12px; font-weight: 400; line-height: 1.5; }
+
+/* 3. Layout & Breakpoints */
+.layout-pc {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 1440px) {
+  .layout-pc {
+    max-width: 1440px;
+    padding: 0 24px;
+  }
+}
+.lnb {
+  width: 240px;
+  min-width: 240px;
+  max-width: 260px;
+}
+.footer {
+  height: 48px;
+  background: var(--bg-20);
+  color: var(--gray-font-80);
+  text-align: center;
+  font-size: 13px;
+  line-height: 48px;
+}
+
+/* 4. Radius */
+.radius-0   { border-radius: 0; }
+.radius-3   { border-radius: 3px; }
+.radius-5   { border-radius: 5px; }
+.radius-12  { border-radius: 12px; }
+.radius-badge { border-radius: 50%; }
+
+/* 5. Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.btn-primary {
+  background: var(--color-primary-100);
+  color: #fff;
+  height: 48px;
+  min-width: 120px;
+}
+.btn-primary:hover {
+  background: var(--color-primary-90);
+}
+.btn-primary:active {
+  background: var(--color-primary-80);
+}
+.btn-primary:disabled {
+  background: var(--bg-10);
+  color: var(--gray-font-60);
+  cursor: not-allowed;
+}
+.btn-secondary {
+  background: #fff;
+  color: var(--color-primary-100);
+  border: 1.6px solid var(--color-primary-100);
+}
+.btn-secondary:hover {
+  background: var(--bg-15);
+}
+.btn-tertiary {
+  background: var(--bg-0);
+  color: var(--color-primary-100);
+  border: 1px solid var(--gray-border-40);
+  height: 36px;
+  font-size: 14px;
+}
+.btn-table {
+  background: var(--bg-20);
+  color: var(--color-primary-100);
+  border: 1px solid var(--gray-border-30);
+  height: 32px;
+  font-size: 13px;
+}
+
+/* 6. Input & Form Controls */
+.input, .textarea, .select {
+  font-family: inherit;
+  border: 1.6px solid var(--gray-border-40);
+  border-radius: 5px;
+  padding: 12px 16px;
+  font-size: 16px;
+  background: #fff;
+  transition: border 0.2s;
+}
+.input:focus {
+  border-color: var(--color-primary-90);
+  outline: none;
+}
+.input.error {
+  border-color: var(--color-state-red);
+}
+.input[disabled], .select[disabled] {
+  background: var(--bg-10);
+  color: var(--gray-font-60);
+  cursor: not-allowed;
+}
+
+/* 7. Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.table th, .table td {
+  padding: 12px 16px;
+  text-align: center;
+  border: 1px solid var(--gray-border-20);
+  font-size: 15px;
+}
+.table th {
+  background: var(--bg-15);
+  font-weight: 700;
+}
+.table-striped tr:nth-child(even) {
+  background: var(--bg-5);
+}
+
+/* 8. Badge & Chip */
+.badge {
+  display: inline-block;
+  padding: 0 8px;
+  height: 20px;
+  background: var(--color-secondary-100);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 20px;
+}
+.chip {
+  display: inline-block;
+  padding: 0 12px;
+  height: 24px;
+  background: var(--bg-10);
+  color: var(--gray-font-80);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 24px;
+  border: 1px solid var(--gray-border-30);
+}
+.chip.selected {
+  background: var(--color-secondary-90);
+  color: #fff;
+  border-color: var(--color-secondary-90);
+}
+
+/* 9. Pagination */
+.pagination {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+.pagination-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  background: var(--bg-0);
+  color: var(--gray-font-80);
+  border: 1px solid var(--gray-border-30);
+  font-size: 15px;
+  cursor: pointer;
+}
+.pagination-btn.selected {
+  background: var(--color-primary-100);
+  color: #fff;
+  border-color: var(--color-primary-100);
+}
+
+/* 10. Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1.6px solid var(--gray-border-40);
+}
+.tab {
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 3px 3px 0 0;
+  background: var(--bg-0);
+  color: var(--gray-font-80);
+  font-size: 16px;
+}
+.tab.active {
+  background: var(--color-primary-100);
+  color: #fff;
+}
+
+/* 11. Icon (Sample) */
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ...추가 컴포넌트 (Accordion, Stepper, Tooltip, Search 등은 필요시 별도 구현 권장) */
